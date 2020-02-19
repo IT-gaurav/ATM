@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "User.cpp"
-#include "main.cpp"
+#pragma once
 
 class Bank
 {
@@ -9,7 +9,6 @@ class Bank
 public:
     void displayMenu();
     int readInput(string str);
-    void selectOption(int choice);
 };
 
 void Bank::displayMenu()
@@ -25,17 +24,6 @@ int Bank::readInput(string str)
     int choice;
     cout << str;
     cin >> choice;
-}
 
-void Bank ::selectOption(int choice)
-{
-    switch (choice)
-    {
-    case 1:
-        *user1.login();
-        break;
-
-    default:
-        break;
-    }
+    return choice;
 }

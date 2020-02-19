@@ -5,8 +5,6 @@ deposite
 withdrawl
 logout
 display info
-
-
 */
 
 #include <iostream>
@@ -25,7 +23,7 @@ int main()
 
     bank.displayMenu();
     int choice = bank.readInput("SELECT : ");
+    user1->selectOption(choice);
 
-    
     return 0;
 }
