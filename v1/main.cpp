@@ -53,16 +53,54 @@ void Bank::display_account()
 
 void Bank::withdraw_money()
 {
-    cout << "Enter the amount you withdraw";
+    float withdraw;
+    cout << "Enter the amount you withdraw\t";
+    cin >> withdraw;
+    balance -= withdraw;
+    cout << "Remaining balance : " << balance;
 };
 
 int main()
 {
-    cout << "1. Open Account\n";
-    cout << "2. deposite money\n";
-    cout << "3. withdraw money\n";
-    cout << "4. Display account\n";
-    cout << "5. Exit\n";
+    Bank bank1;
+    int option;
+    do
+    {
+        /* code */
+
+        cout << "1. Open Account\n";
+        cout << "2. deposite money\n";
+        cout << "3. withdraw money\n";
+        cout << "4. Display account\n";
+        cout << "5. Exit\n";
+        cout << "Select the options from 1-5:\t";
+        cin >> option;
+    } while (option < 1 && option > 5);
+
+    switch (option)
+    {
+    case 1:
+        bank1.open_account();
+        break;
+    case 2:
+        bank1.deposite_money();
+        break;
+
+    case 3:
+        bank1.withdraw_money();
+        break;
+
+    case 4:
+        bank1.deposite_money();
+        break;
+
+    case 5:
+        cout << "Thanks for using our ATM";
+        break;
+
+    default:
+        break;
+    }
 
     return 0;
 }
